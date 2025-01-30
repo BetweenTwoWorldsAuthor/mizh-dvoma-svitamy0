@@ -1,0 +1,349 @@
+<h2 class="kawaii-typing"></h2>
+.kawaii-typing {
+    font-size: 24px;
+    <div class="sailor-moon-container">
+    <h1 class="sailor-title">月に代わって、おしおきよ！</h1>
+</div>
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+
+body {
+    background: linear-gradient(to bottom, #ffdde1, #ee9ca7);
+    font-family: 'Kaushan Script', cursive;
+    text-align: center;
+    overflow: hidden;
+}
+
+.sailor-moon-container {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sailor-title {
+    font-size: 50px;
+    color: #fff;
+    text-shadow: 0 0 10px #ffccff, 0 0 20px #ff99ff, 0 0 40px #ff66ff;
+    animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+    0% { text-shadow: 0 0 10px #ffccff, 0 0 20px #ff99ff; }
+    100% { text-shadow: 0 0 15px #ff66ff, 0 0 30px #ff33ff; }
+}<div class="stars-container"></div>
+.stars-container {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.star {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 0 10px white;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    from { transform: translateY(-100vh); opacity: 1; }
+    to { transform: translateY(100vh); opacity: 0; }
+}
+function createStar() {
+    const star = document.createElement("div");
+    star.classList.add("star");
+    star.style.left = Math.random() * window.innerWidth + "px";
+    star.style.animationDuration = Math.random() * 3 + 2 + "s";
+    document.querySelector(".stars-container").appendChild(star);
+
+    setTimeout(() => {
+        star.remove();
+    }, 5000);
+}
+
+setInterval(createStar, 300);
+<h2 class="sailor-typing"></h2>
+.sailor-typing {
+    font-size: 30px;
+    font-family: 'Noto Sans JP', sans-serif;
+    color: #ffb6c1;
+    border-right: 2px solid;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+.sailor-typing {
+    animation: typing 3s steps(30, end) forwards, blink 0.5s infinite;
+}
+const text = "月の光は愛のメッセージ！(The Moonlight is a message of love!)";
+const typingElement = document.querySelector(".sailor-typing");
+let index = 0;
+
+function typeText() {
+    if (index < text.length) {
+        typingElement.textContent += text[index];
+        index++;
+        setTimeout(typeText, 100);
+    }
+}
+
+typeText();
+<div class="moon-waves"></div>
+.moon-waves {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 150px;
+    background: url('https://i.ibb.co/VHHmFL4/wave-pink.png') repeat-x;
+    animation: moon-waves-animation 10s linear infinite;
+}
+
+@keyframes moon-waves-animation {
+    0% { background-position: 0 0; }
+    100% { background-position: 1000px 0; }
+}
+<div class="book-cover">
+    <img src="IMG_5977 (2)" alt="Обкладинка книги 'Між двома світами'">
+</div>
+.book-cover {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.book-cover img {
+    width: 300px; /* Розмір обкладинки, можна змінити */
+    border-radius: 10px; /* Закруглені кути */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Тінь для об’ємного ефекту */
+    transition: transform 0.3s ease-in-out;
+}
+
+.book-cover img:hover {
+    transform: scale(1.05); /* Збільшення при наведенні */
+}
+
+<div class="author-section">
+    <img src="author.jpg" alt="Фото автора" class="author-photo">
+    <div class="author-text">
+        <h2>Про автора</h2>
+        <p>Я Юлія, авторка книги "Між двома світами". Вклала в цю історію багато любові та сил і дуже вдячна кожному, хто занурився в неї та відчув через себе.</p>
+    </div>
+</div>
+.author-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    background: linear-gradient(to right, #ffdde1, #ee9ca7); /* Ніжний рожевий фон */
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 30px auto;
+}
+
+.author-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Робить фото круглим */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+.author-photo:hover {
+    transform: scale(1.1); /* Легке збільшення при наведенні */
+}
+
+.author-text {
+    max-width: 500px;
+    color: #333;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+  <img src="images/cover.jpg" alt="Обкладинка книги">
+  <img src="images/author.jpg" alt="Фото автора">
+   @keyframes glow {
+    0% { box-shadow: 0 0 5px rgba(255, 182, 193, 0.8); }
+    50% { box-shadow: 0 0 20px rgba(255, 182, 193, 1); }
+    100% { box-shadow: 0 0 5px rgba(255, 182, 193, 0.8); }
+}
+
+.magic-button {
+    display: inline-block;
+    padding: 12px 25px;
+    font-size: 18px;
+    color: white;
+    background: linear-gradient(to right, #ff758c, #ff7eb3);
+    border: none;
+    border-radius: 25px;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    animation: glow 1.5s infinite alternate;
+    transition: transform 0.2s ease-in-out;
+}
+
+.magic-button:hover {
+    transform: scale(1.1);
+}
+<a href="https://t.me/julishkk_s" class="magic-button">Забронювати книгу</a>
+body {
+    background: linear-gradient(to bottom, #ffe4e1, #ffd1dc, #ffb6c1);
+    font-family: "M PLUS Rounded 1c", sans-serif;
+}
+body {
+    background: url('IMG_5977') no-repeat center center fixed;
+    background-size: cover;
+}
+.magic-button {
+    display: inline-block;
+    padding: 12px 25px;
+    font-size: 18px;
+    color: white;
+    background: linear-gradient(45deg, #ff90bc, #ffacd4);
+    border: none;
+    border-radius: 25px;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+}
+
+.magic-button:hover {
+    transform: scale(1.1);
+}
+
+.magic-button::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.5) 10%, transparent 60%);
+    transition: 0.5s;
+    opacity: 0;
+}
+
+.magic-button:hover::after {
+    opacity: 1;
+    top: -30%;
+    left: -30%;
+}
+h1, h2 {
+    font-family: "Cherry Bomb One", cursive;
+    color: #ff69b4;
+    text-shadow: 2px 2px 8px rgba(255, 105, 180, 0.6);
+}
+.book-cover {
+    display: block;
+    width: 300px;
+    height: auto;
+    border-radius: 15px;
+    border: 5px solid #ffb6c1;
+    box-shadow: 0 0 15px rgba(255, 182, 193, 0.8);
+    transition: transform 0.3s ease-in-out;
+}
+
+.book-cover:hover {
+    transform: rotate(-2deg) scale(1.05);
+}
+html 
+<!DOCTYPE html> 
+<html lang="uk"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Замовлення та оплата</title> 
+    <style> 
+        body { 
+            font-family: Arial, sans-serif; 
+            background-color: #f9f9f9; 
+            color: #333; 
+            margin: 0; 
+            padding: 20px; 
+        } 
+        h1 { 
+            text-align: center; 
+            color: #FFB6C1; 
+        } 
+        .form-container { 
+            width: 50%; 
+            margin: 0 auto; 
+            background-color: #fff; 
+            padding: 20px; 
+            border-radius: 10px; 
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+        } 
+        input, textarea, select, button { 
+            width: 100%; 
+            padding: 10px; 
+            margin: 10px 0; 
+            border-radius: 5px; 
+            border: 1px solid #ddd; 
+        } 
+        button { 
+            background-color: #FFB6C1; 
+            border: none; 
+            cursor: pointer; 
+        } 
+        button:hover { 
+            background-color: #FF69B4; 
+        } 
+        .response { 
+            text-align: center; 
+            font-size: 1.2em; 
+            color: #FF69B4; 
+        } 
+    </style> 
+</head> 
+<body> 
+    <h1>Замовити книгу та залишити відгук</h1> 
+     
+    <!-- Форма для замовлення книги --> 
+    <div class="form-container"> 
+        <form action="/submit_order" method="POST"> 
+            <label for="name">Ваше ім'я:</label> 
+            <input type="text" id="name" name="name" required> 
+ 
+            <label for="address">Адреса доставки:</label> 
+            <textarea id="address" name="address" rows="4" required></textarea> 
+ 
+            <label for="phone">Контактний номер телефону:</label> 
+            <input type="tel" id="phone" name="phone" required> 
+ 
+            <label for="book">Виберіть книгу:</label> 
+            <select id="book" name="book" required> 
+                <option value="paper_book">'Між двома світами' (паперовий варіант) — 350 грн</option> 
+                <option value="e_book">'Між двома світами' (електронний варіант) — 150 грн</option> 
+            </select> 
+ 
+            <button type="submit">Замовити</button> 
+        </form> 
+    </div> 
+ 
+    <!-- Виведення теплого повідомлення після оформлення замовлення --> 
+    <div id="response" class="response"> 
+        {% if response %} 
+            <p>{{ response }}</p> 
+        {% else %} 
+            <p>Ми раді бачити ваші замовлення! 💕</p> 
+        {% endif %} 
+    </div> 
+</body> 
+</html> 
